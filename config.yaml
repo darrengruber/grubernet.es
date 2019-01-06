@@ -2,6 +2,8 @@ baseURL: https://grubernet.es/
 languageCode: en-us
 title: grubernet.es
 theme: hyde
+enableEmoji: true
+
 params:
   description: rantings on automation, containers and security
   # themeColor: theme-base-0d

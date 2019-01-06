@@ -1,37 +1,4 @@
-# Based on https://github.com/cibuilds/hugo
-
-FROM ruby:2.4-alpine
-
-LABEL maintainer="dgruber@gmail.com"
-
-ENV HUGO_VERSION=0.53
-ENV HUGO_DOWNLOAD_URL=https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
-
-RUN apk add --no-cache \
-		bash \
-		build-base \
-		ca-certificates \
-		curl \
-		git \
-		libcurl \
-# Needed for Hugo Extended which uses CGO
-		libc6-compat \
-		libxml2-dev \
-		libxslt-dev \
-		openssh \
-		rsync \
-		curl && \
-	gem install \
-		html-proofer \
-		nokogiri \
-	--no-document
-
-RUN curl -sSL ${HUGO_DOWNLOAD_URL} \
-  | tar xfvz - -C /usr/local/bin hugo \
- && chmod +x /usr/local/bin/hugo
+FROM darren/hugo:0.53
 
 WORKDIR /hugo
 COPY . /hugo
-
-CMD ["htmlproofer","--help"]
-EXPOSE 1313
