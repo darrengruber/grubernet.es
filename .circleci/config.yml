@@ -1,0 +1,52 @@
+version: 2
+jobs:
+  build:
+    branches:
+      only:
+        - master
+    docker:
+      - image: cibuilds/hugo:latest
+    working_directory: /root/hugo
+    environment:
+      HUGO_BUILD_DIR: /tmp/public
+      HUGO_ENV: prod
+    steps:
+
+      - add_ssh_keys:
+          fingerprints:
+            - "52:e7:3a:2d:f5:80:e4:c5:9f:15:cf:12:d5:6e:b0:79"
+
+      - run:
+          name: install and configure git
+          command: |
+            apk update && apk add git
+            git config --global user.email "dgruber@gmail.com"
+            git config --global user.name "Darren Gruber"
+
+      # checkout the repository
+      - checkout
+
+      - run:
+          name: build with HUGO
+          command: hugo -v --minify -d $HUGO_BUILD_DIR
+
+      - run:
+          name: test generated HTML files
+          command: |
+            htmlproofer $HUGO_BUILD_DIR \
+            --allow-hash-href \
+            --check-html \
+            --empty-alt-ignore \
+            --disable-external
+
+      - run:
+          name: move all html to gh-pages branch and push
+          command: |
+            git fetch --all
+            git checkout -f gh-pages
+            rm -rf *
+            mv /tmp/public/* .
+            git checkout master -- .circleci/config.yml
+            git add .
+            git commit -m "Update HTML"
+            git push -f origin HEAD
