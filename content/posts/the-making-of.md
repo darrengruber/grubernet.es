@@ -1,7 +1,7 @@
 ---
 title: "The making of"
 date: 2019-01-05T16:12:07-05:00
-draft: true
+draft: false
 ---
 
 So here's the thing about the thing  
