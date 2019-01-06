@@ -1,16 +1,16 @@
-baseURL: 'https://grubernet.es/'
+baseURL: https://grubernet.es/
 languageCode: en-us
 title: grubernet.es
 theme: hyde
 params:
-  description: 'rantings on automation, containers and security'
+  description: rantings on automation, containers and security
   # themeColor: theme-base-0d
-  copyright:
+  copyright: ' '
 menu:
   links:
     - identifier: github
       name: github.com/darrengruber
-      url: 'https://github.com/darrengruber'
+      url: https://github.com/darrengruber
     - identifier: dockerhub
       name: hub.docker.com/u/darren
-      url: 'https://hub.docker.com/u/darren'
+      url: https://hub.docker.com/u/darren
