@@ -9,6 +9,7 @@ jobs:
     working_directory: /root/hugo
     environment:
       HUGO_BUILD_DIR: /tmp/public
+      HUGO_ENV: prod
     steps:
 
       - add_ssh_keys:
@@ -27,10 +28,10 @@ jobs:
 
       - run:
           name: build with HUGO
-          command: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
+          command: hugo -v --minify -d $HUGO_BUILD_DIR
 
       - run:
-          name: move all html to master branch
+          name: move all html to gh-pages branch
           command: |
             git fetch --all
             git checkout -f gh-pages
@@ -40,7 +41,7 @@ jobs:
             git commit -m "Update HTML"
 
       - run:
-          name: test our generated HTML files
+          name: test generated HTML files
           command: |
             htmlproofer . --allow-hash-href --check-html \
             --empty-alt-ignore --disable-external
