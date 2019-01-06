@@ -405,3 +405,9 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+
+/* Footnotes */
+.footnotes li {
+  margin-top: 1em;
+  font-size: .75rem;
+}
