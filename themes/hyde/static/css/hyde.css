@@ -65,7 +65,7 @@ html {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 18rem;
+    width: 20rem;
     text-align: left;
   }
 }
@@ -78,11 +78,19 @@ html {
   font-size: 2.4rem;
 }
 
+
 /* Sidebar nav */
 .sidebar-nav {
   padding-left: 0;
-  list-style: none;
+  /* list-style: none; */
 }
+
+.sidebar-nav-img {
+  float: left;
+  width: 20px;
+  padding: 0 20px 20px 0;
+}
+
 .sidebar-nav-item {
   display: block;
 }

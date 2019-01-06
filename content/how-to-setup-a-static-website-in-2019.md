@@ -1,5 +1,5 @@
 ---
-title: "How this blog works"
+title: Automating this blog with hugo, Github, CircleCI and Docker
 type: post
 date: 2019-01-05T16:12:07-05:00
 draft: false
