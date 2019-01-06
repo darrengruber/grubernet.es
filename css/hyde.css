@@ -81,7 +81,7 @@ html {
 
 /* Sidebar nav */
 .sidebar-nav {
-  list-style: none;
+  padding-left: 1rem;
 }
 
 .sidebar-nav-profile {
@@ -124,8 +124,8 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    4rem;
-  padding-bottom: 4rem;
+  padding-top:    1rem;
+  padding-bottom: 1rem;
 }
 
 @media (min-width: 48em) {
