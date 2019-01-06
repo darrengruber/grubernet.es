@@ -5,7 +5,7 @@ theme: hyde
 params:
   description: 'rantings on automation, containers and security'
   # themeColor: theme-base-0d
-  copyright: ' '
+  copyright:
 menu:
   links:
     - identifier: github
