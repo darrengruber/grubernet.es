@@ -46,6 +46,7 @@ jobs:
             git checkout -f gh-pages
             rm -rf *
             mv /tmp/public/* .
+            git checkout master -- .circleci/config.yml
             git add .
             git commit -m "Update HTML"
             git push -f origin HEAD
