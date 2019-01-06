@@ -301,6 +301,10 @@ tbody tr:nth-child(odd) th {
  * page is wrapped in `.page` and is only used on the page layout.
  */
 
+.posts h1 {
+  margin-top: .8em;
+}
+
 .page,
 .post {
   margin-bottom: 4em;
