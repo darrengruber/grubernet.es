@@ -81,14 +81,13 @@ html {
 
 /* Sidebar nav */
 .sidebar-nav {
-  padding-left: 0;
-  /* list-style: none; */
+  list-style: none;
 }
 
-.sidebar-nav-img {
+.sidebar-nav-profile {
   float: left;
-  width: 20px;
-  padding: 0 20px 20px 0;
+  width: 60px;
+  padding: 5px 10px 10px 0;
 }
 
 .sidebar-nav-item {
