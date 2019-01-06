@@ -3,6 +3,7 @@ languageCode: en-us
 title: grubernet.es
 theme: hyde
 enableEmoji: true
+googleAnalytics: UA-131799127-1
 
 params:
   description: rantings on automation, containers and security
